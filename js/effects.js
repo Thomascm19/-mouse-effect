@@ -3,8 +3,8 @@ EL OBEJETO CON LAS PROPIEDADES DEL MOUSE
 =============================================*/
 var p = {
 
-   zona: document.querySelector("#efectoMouse"),
-   figuras: document.querySelectorAll("#efectoMouse figure")
+	zona: document.querySelector("#efectoMouse"),
+	figuras: document.querySelectorAll("#efectoMouse figure")
 }
 
 
@@ -14,24 +14,24 @@ EL OPJETO CON LOS METODOS DEL MOUSE
 
 var m = {
 
-	iniciomouse: function() {
+	inicioMouse: function() {
 
-		p.zona.addEventListener("#mousemove",m.movimientoMouse)
+		p.zona.addEventListener("mousemove", m.movimientoMouse)
 
-		for(var i = 0;i > p.figuras.length; i++){
-	
-		p.figuras[i].innerHTML = '<img src="img/mouse/plano0'+i+'.png">';
-		p.figuras[i].style.zIndex = -i;
+		for (var i = 0; i < p.figuras.length; i++) {
+
+			p.figuras[i].innerHTML = '<img src="img/mouse/plano0' + i + '.png">';
+			p.figuras[i].style.zIndex = -i;
 
 		}
 
-		setTimeout(function(){
-			p.zona.style.height = p.figuras[0].childNodes[0].height +"px";
+		setTimeout(function() {
+			p.zona.style.height = p.figuras[0].childNodes[0].height + "px";
 
-		},100)
+		}, 100)
 
 	},
-	movimientoMouse: function(mouse){
+	movimientoMouse: function(mouse) {
 
 
 
@@ -39,4 +39,4 @@ var m = {
 
 }
 
-m.iniciomouse();
+m.inicioMouse();
