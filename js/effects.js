@@ -4,7 +4,9 @@ EL OBEJETO CON LAS PROPIEDADES DEL MOUSE
 var p = {
 
 	zona: document.querySelector("#efectoMouse"),
-	figuras: document.querySelectorAll("#efectoMouse figure")
+	figuras: document.querySelectorAll("#efectoMouse figure"),
+	mouseX: 0,
+	mouseY: 0
 }
 
 
@@ -33,7 +35,15 @@ var m = {
 	},
 	movimientoMouse: function(mouse) {
 
+		p.mouseX = mouse.offsetX;
+		p.mouseY = mouse.offsetY;
 
+		for (var i = 0; i < p.figuras.length; i++){
+
+			p.figuras[i].style.left = -p.mouseX / (i*100 +50)+"%";
+			p.figuras[i].style.top = -p.mouseY / (i*100 +50)+"%";
+
+		}
 
 	}
 
